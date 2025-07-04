@@ -1,3 +1,120 @@
-.label{
-    color: rgb(255, 145, 0);
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #0077b6;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    float: left;
+    margin-left: 20px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Boas-vindas */
+.boas-vindas {
+    background-color: #caf0f8;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.boas-vindas h2 {
+    margin-bottom: 10px;
+}
+
+/* Produtos em lista */
+.produto-linha {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-produto {
+    width: 150px;
+    height: 150px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.info-produto {
+    flex: 1;
+}
+
+.info-produto h3 {
+    margin-bottom: 10px;
+}
+
+.preco {
+    color: #0077b6;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #023e8a;
+}
+
+/* Rodapé */
+footer {
+    background-color: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
 }

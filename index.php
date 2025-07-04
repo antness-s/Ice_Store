@@ -1,4 +1,3 @@
-```php
 <?php
 
 // Configurações do banco de dados
@@ -41,7 +40,7 @@ if (!empty($dados["Sendlogin"])) {
             $_SESSION['id'] = $row_usuario['id'];
             $_SESSION['usuario'] = $dados["usuario"];
             
-            header("Location: dashboard.php"); // redireciona para página restrita
+            header("Location: ./pages/home.php"); // redireciona para página restrita
             exit();
         } else {
             echo "<p style='color: red'>Erro: Senha incorreta!</p>";
