@@ -59,7 +59,8 @@ if (!empty($dados["Sendlogin"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="icon" href="assets/icon.webp" />
+    <title>Ice Store</title>
  </head>
  <body>
     <div class="menu-btn" onclick="toggleSidebar()">☰</div>
