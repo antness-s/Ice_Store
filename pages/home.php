@@ -18,18 +18,13 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 <body>
 
- 
   <div class="menu-btn" onclick="toggleSidebar()">☰</div>
-
 
   <div id="sidebar" class="sidebar">
     <div class="sidebar-content">
-      <div class="imagem-meio">
-        <img src="../assets/background.jpg" alt="">
-      </div>
-
+      <div class="imagem-meio"></div> 
       <div class="sidebar-rodape">
-        <p>Contato: contato@icestore.com</p>
+        <p>Contato: gabriel.przygoda@escola.pr.gov.br</p>
         <p><a href="https://github.com/antness-s" target="_blank">GitHub</a></p>
       </div>
     </div>
@@ -37,7 +32,7 @@ if (!isset($_SESSION['usuario'])) {
 
   <header>
     <div class="container">
-            <img src="../assets/icon.webp" alt="Ice Store Logo"  style="height: 50px; margin-right: 10px; vertical-align: middle;">
+      <img src="../assets/icon.webp" alt="Ice Store Logo"  style="height: 50px; margin-right: 10px; vertical-align: middle; top: -10px; position: relative;">
       <h1>Ice Store</h1>
       <nav>
         <ul>
@@ -56,7 +51,7 @@ if (!isset($_SESSION['usuario'])) {
       <p>Confira nossos equipamentos de esqui e escalada!</p>
     </div>
   </section>
-
+  
   <div class="container">
     <div class="banner-container">
       <div class="banner">
@@ -68,62 +63,33 @@ if (!isset($_SESSION['usuario'])) {
   </div>
 
   <main>
-        <div class="container">
-        <h2>Alguns produtos:</h2>
+    <div class="container">
+      <h2>Alguns produtos:</h2>
+      <div class="produtos-container">
+        <?php
+          // Carrega o JSON com os produtos
+          $json = file_get_contents('produtos.json');
+          $produtos = json_decode($json, true);
 
-        <div class="produtos-container">
-            <!-- Produto 1 -->
-            <div class="produto-linha">
-                <div class="imagem-produto">
-                    <img src="../assets/mascara.jpg" alt="Máscara de Esqui">
-                </div>
-                <div class="info-produto">
-                    <h3>Máscara de Esqui Profissional</h3>
-                    <p class="descricao">Proteção UV400 para alta montanha</p>
-                    <p class="preco">R$ 249,90</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-
-            <!-- Produto 2 -->
-            <div class="produto-linha">
-                <div class="imagem-produto">
-                    <img src="../assets/luva.webp" alt="Luvas Térmicas">
-                </div>
-                <div class="info-produto">
-                    <h3>Luvas Térmicas Impermeáveis</h3>
-                    <p class="descricao">Resistentes a -30°C</p>
-                    <p class="preco">R$ 189,90</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-
-            <!-- Produto 3 -->
-            <div class="produto-linha">
-                <div class="imagem-produto">
-                    <img src="../assets/mochila.jpeg" alt="Mochila de Montanha">
-                </div>
-                <div class="info-produto">
-                    <h3>Mochila de Montanha 40L</h3>
-                    <p class="descricao">Resistente à água e vento</p>
-                    <p class="preco">R$ 349,90</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-
-            <!-- Produto 4 -->
-            <div class="produto-linha">
-                <div class="imagem-produto">
-                    <img src="../assets/meia.webp" alt="Meias Térmicas">
-                </div>
-                <div class="info-produto">
-                    <h3>Meias Térmicas Alpinas</h3>
-                    <p class="descricao">Tecnologia DryFit</p>
-                    <p class="preco">R$ 79,90</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-        </div>
+          if ($produtos && is_array($produtos)) {
+            foreach ($produtos as $produto) {
+              echo '<div class="produto-linha">';
+              echo '<div class="imagem-produto">';
+              echo '<img src="' . htmlspecialchars($produto["imagem"]) . '" alt="' . htmlspecialchars($produto["nome"]) . '">';
+              echo '</div>';
+              echo '<div class="info-produto">';
+              echo '<h3>' . htmlspecialchars($produto["nome"]) . '</h3>';
+              echo '<p class="descricao">' . htmlspecialchars($produto["descricao"]) . '</p>';
+              echo '<p class="preco">R$ ' . number_format($produto["preco"], 2, ",", ".") . '</p>';
+              echo '<a href="produto.php?id=' . urlencode($produto["id"]) . '"><button>Comprar</button></a>';
+              echo '</div>';
+              echo '</div>';
+            }
+          } else {
+            echo '<p>Não há produtos disponíveis no momento.</p>';
+          }
+        ?>
+      </div>
     </div>
   </main>
 

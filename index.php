@@ -58,21 +58,40 @@ if (!empty($dados["Sendlogin"])) {
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
  </head>
  <body>
-    
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-rodape">
+        <p>Contato: gabriel.przygoda@escola.pr.gov.br</p>
+        <p><a href="https://github.com/antness-s" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+  </div>
  </body>
+  <script src="pages/home.js"></script>
  </html>
-<form method="POST" action="">
+<div class="quadrado-form">
+  <div class="form-pinguim">
+    <img src="assets/icon.webp" alt="Ícone da loja" class="logo-lado">
+    
+    <div class="form-bloco">
+      <h1>ICE STORE</h1>
+      <form method="POST" action="">
+          <label>Usuário: </label>
+          <input type="text" name="usuario" placeholder="digite o usuário" required><br><br>
 
-    <label>Usuário: </label>
-    <input type="text" name="usuario" placeholder="digite o usuário" required><br><br>
-    
-    <label>Senha: </label>
-    <input type="password" name="senha_usuario" placeholder="digite a senha" required><br><br>
-    
-    <input type="submit" name="Sendlogin" value="Acessar">
-    
-    </form>
+          <label>Senha: </label>
+          <input type="password" name="senha_usuario" placeholder="digite a senha" required><br><br>
+
+          <input type="submit" name="Sendlogin" value="Acessar">
+      </form>
+    </div>
+  </div>
+</div>
     <!-- fim do formulario -->
+      
+

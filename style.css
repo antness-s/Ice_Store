@@ -1,120 +1,216 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Geral */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
+    background: url('assets/background_b.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-/* Cabeçalho */
-header {
+
+.login-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 100%;
+        max-width: 400px;
+        animation: fadeIn 0.5s ease-in-out;
+}
+
+h1 {
+         color: #333;
+         text-align: center;
+         margin-bottom: 30px;
+        font-weight: 600;
+}
+
+.form-group {
+         margin-bottom: 20px;
+        position: relative;
+ }
+
+label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: 500;
+}
+
+input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: all 0.3s;
+}
+
+input:focus {
+        border-color: #a777e3;
+        box-shadow: 0 0 0 3px rgba(167, 119, 227, 0.2);
+        outline: none;
+}
+
+input[type="submit"] {
+        background-color: #6e8efb;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        padding: 12px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+        background-color: #5a7bf0;
+}
+
+
+.quadrado-form {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.75);
+
+}
+
+.quadrado-form h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: bold;
+}
+
+.logo-icon {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    object-fit: contain;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    color: #023e8a;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
     background-color: #0077b6;
     color: white;
-    padding: 20px 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-header h1 {
-    float: left;
-    margin-left: 20px;
+.sidebar.active {
+    left: 0;
 }
 
-nav ul {
-    float: right;
-    margin-right: 20px;
-    list-style: none;
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
 }
 
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/* Boas-vindas */
-.boas-vindas {
-    background-color: #caf0f8;
-    padding: 40px 0;
-    text-align: center;
-}
-
-.boas-vindas h2 {
+.sidebar-rodape {
+    font-size: 14px;
     margin-bottom: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Produtos em lista */
-.produto-linha {
+.sidebar-rodape a {
+    color: #caf0f8;
+    text-decoration: none;
+}
+
+.sidebar-rodape a:hover {
+    text-decoration: underline;
+}
+
+.form-pinguim {
     display: flex;
     align-items: center;
-    background-color: white;
-    margin: 20px 0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.imagem-produto {
-    width: 150px;
-    height: 150px;
-    background-color: #e0e0e0;
-    border-radius: 6px;
-    margin-right: 20px;
+.logo-lado {
+    width: 270px;
+    height: 270px;
+    object-fit: contain;
 }
 
-.info-produto {
+.form-bloco {
     flex: 1;
+    min-width: 250px;
 }
 
-.info-produto h3 {
-    margin-bottom: 10px;
-}
+@media (max-width: 768px) {
+    .form-pinguim {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-.preco {
-    color: #0077b6;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+    .logo-lado {
+        width: 180px;
+        height: 180px;
+    }
 
-button {
-    padding: 8px 16px;
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .quadrado-form {
+        padding: 20px;
+        max-width: 90%;
+    }
 
-button:hover {
-    background-color: #023e8a;
-}
+    .form-bloco {
+        width: 100%;
+    }
 
-/* Rodapé */
-footer {
-    background-color: #023e8a;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+    .form-bloco form input {
+        font-size: 15px;
+    }
+
+    .form-bloco h1 {
+        font-size: 22px;
+    }
+
+    .menu-btn {
+        font-size: 26px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .sidebar {
+        width: 80%;
+    }
 }

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nome": "Máscara de Esqui Profissional",
+    "descricao": "Proteção UV400 para alta montanha",
+    "preco": 249.90,
+    "imagem": "../assets/mascara.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Luvas Térmicas Impermeáveis",
+    "descricao": "Resistentes a -30°C",
+    "preco": 189.90,
+    "imagem": "../assets/luva.webp"
+  },
+  {
+    "id": 3,
+    "nome": "Mochila de Montanha 40L",
+    "descricao": "Resistente à água e vento",
+    "preco": 349.90,
+    "imagem": "../assets/mochila.jpeg"
+  },
+  {
+    "id": 4,
+    "nome": "Meias Térmicas Alpinas",
+    "descricao": "Tecnologia DryFit",
+    "preco": 79.90,
+    "imagem": "../assets/meia.webp"
+  }
+]
